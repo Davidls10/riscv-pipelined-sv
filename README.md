@@ -15,4 +15,9 @@ forces the hazards of the microarchitecture to be handled by the Hazard Unit.
 
 The implemented and tested instructions are: lw, sw, or, and, beq, addi.
 
+The top-level module is the "processor.sv" file, where the other units are instantiated. The testbench is a simple clocking of the top-level
+module. There are some "$display" tasks on the top-level module for debugging.
+
+Tested on Vivado 2024.2 and the Verilog version on Icarus Verilog.
+
 The implementation is based on Sarah Harris and David Harris's Digital Design and Computer Architecture RISC-V Edtion.
