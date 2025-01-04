@@ -20,4 +20,4 @@ module. There are some "$display" tasks on the top-level module for debugging.
 
 Tested on Vivado 2024.2 and the Verilog version on Icarus Verilog.
 
-The implementation is based on Sarah Harris and David Harris's Digital Design and Computer Architecture RISC-V Edtion.
+The implementation is based on Sarah Harris and David Harris's Digital Design and Computer Architecture RISC-V Edition.
