@@ -1,6 +1,6 @@
 # riscv-pipelined-sv
 
-This project aims to implement a functional version of a pipelined microarchitecture for
+This project aims to implement on HDL a functional version of a pipelined microarchitecture for
 the RV32I version of the RISC-V ISA.
 
 The processor has five stages: Fetch, Decode, Execute, Memory, and Writeback.
