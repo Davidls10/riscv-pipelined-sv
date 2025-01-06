@@ -246,8 +246,6 @@ module processor(input logic clk, reset);
 
     extend_unit ext(.imm_ext(ImmExtD), .imm_src(ImmSrcD), .instr(InstrD[31:7]));
 
-    assign PCTargetE = PCE + ImmExtE;
-
 
     // operations on register file
     /**
