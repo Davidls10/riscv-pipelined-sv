@@ -3,7 +3,7 @@ module instruction_memory(input logic [31:0] pc,
 
     /*
     L1: lw x5, -4(x9)        I   111111111100 01001 010 00101 0000011 // stall when in the execute stage
-        or x4, x5, x6        R   0000000 00110 00101 110 00100 0110011 // normal
+        or x4, x5, x6        R   0000000 00110 00101 110 00100 0110011 // forwarding
         sw x6, 8(x9)         S   0000000 00110 01001 010 01000 0100011 // normal
         addi x4, x4, 2       I   000000000010 00100 000 00100 0010011 // forwarding
         sw x4, 4(x9)         S   0000000 00100 01001 010 00100 0100011 // normal
