@@ -1,6 +1,5 @@
 module hazard_unit (output logic [2-1:0] ForwardAE,
                     output logic [2-1:0] ForwardBE,
-                    output logic lwStall,
                     output logic StallF,
                     output logic StallD,
                     output logic FlushD,
@@ -17,6 +16,8 @@ module hazard_unit (output logic [2-1:0] ForwardAE,
                     input logic PCSrcE,
                     input logic ResultSrcE0);
 
+    logic lwStall;
+  
     always_comb begin
         // Forward logic
         if (((Rs1E == RdM) & RegWriteM) & (Rs1E != 1'b0))
