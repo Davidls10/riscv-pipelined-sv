@@ -58,7 +58,7 @@ module processor(input logic clk, reset);
     logic [5-1:0] Rs1D, Rs2D;
     logic [5-1:0] Rs1E, Rs2E;
     logic [1:0] ForwardAE, ForwardBE;
-    logic lwStall, StallF, StallD;
+    logic StallF, StallD;
     logic FlushD, FlushE;
 
 
@@ -206,7 +206,7 @@ module processor(input logic clk, reset);
                  RegWriteW, ResultSrcW, ALUResultW, ReadDataW, PCPlus4W, ResultW, RdW);
         $display("ForwardAE = %b  ForwardBE = %b  SrcAE = %d  SrcBE = %d  AluSrcE = %d  WriteDataE = %d", 
                  ForwardAE, ForwardBE, SrcAE, SrcBE, AluSrcE, WriteDataE);
-        $display("PCSrcE = %b  lwStall = %b  StallF = %b  StallD = %b  FlushD = %b  FlushE = %b\n", PCSrcE, lwStall, StallF, StallD, FlushD, FlushE);
+        $display("PCSrcE = %b  StallF = %b  StallD = %b  FlushD = %b  FlushE = %b\n", PCSrcE, StallF, StallD, FlushD, FlushE);
     end
 
     // program counter + 4
@@ -296,7 +296,6 @@ module processor(input logic clk, reset);
     assign Rs2D = InstrD[24:20];
     hazard_unit haz_unit (.ForwardAE(ForwardAE),
                           .ForwardBE(ForwardBE),
-                          .lwStall(lwStall),
                           .StallF(StallF),
                           .StallD(StallD),
                           .FlushD(FlushD),
