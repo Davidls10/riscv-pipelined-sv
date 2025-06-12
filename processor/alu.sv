@@ -8,9 +8,9 @@ module alu#(parameter N = 32)
     logic [N-1:0] sub;
     logic [N-1:0] y_and;
     logic [N-1:0] y_or;
-    assign zero_flag = ((SrcA - SrcB) !== 0) ? 0 : 1;
+    assign zero_flag = ((SrcA - SrcB) == 0) ? 1 : 0;
 
-    adder add1(.f(sum), .cout(cout), .a(SrcA), .b(SrcB)); // 000
+    assign sum = SrcA + SrcB;
     subtractor sub1(sub, SrcA, SrcB); // 001
     andN and1(y_and, SrcA, SrcB); // 010
     orN or1(y_or, SrcA, SrcB); // 011
