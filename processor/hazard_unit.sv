@@ -20,18 +20,18 @@ module hazard_unit (output logic [2-1:0] ForwardAE,
     always_comb begin
         // Forward logic
         if (((Rs1E == RdM) & RegWriteM) & (Rs1E != 1'b0))
-            ForwardAE <= 2'b10;
+            ForwardAE = 2'b10;
         else if (((Rs1E == RdW) & RegWriteW) & (Rs1E != 1'b0))
-            ForwardAE <= 2'b01;
+            ForwardAE = 2'b01;
         else 
-            ForwardAE <= 2'b00;
+            ForwardAE = 2'b00;
 
         if (((Rs2E == RdM) & RegWriteM) & (Rs2E != 1'b0))
-            ForwardBE <= 2'b10;
+            ForwardBE = 2'b10;
         else if (((Rs2E == RdW) & RegWriteW) & (Rs2E != 1'b0))
-            ForwardBE <= 2'b01;
+            ForwardBE = 2'b01;
         else
-            ForwardBE <= 2'b00;
+            ForwardBE = 2'b00;
 
     end
 
